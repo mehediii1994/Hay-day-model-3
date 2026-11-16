@@ -300,7 +300,7 @@ function render(){const n=NAV.find(x=>x[0]===V);charts.forEach(c=>c.destroy());c
  if(V==='products')pList();if(V==='pur')plines();if(V==='sales'){slines();spick('')}if(V==='hist')hList();
  document.querySelector('aside .on')?.scrollIntoView?.({inline:'center',block:'nearest'});charts=typeof Chart==='undefined'?[]:cq.map(([id,cfg])=>new Chart($('#'+id),{...cfg,options:{responsive:true,plugins:{legend:{display:cfg.data.datasets.length>1}}}}))}
 // ---- cloud sync (Firebase) : inactive until FB config is filled ----
-const FB={apiKey:'',authDomain:'',projectId:'',appId:''}; // <-- paste your Firebase config here
+const FB={apiKey:"AIzaSyCOUmWMZ47VmsDSNjFm8YWVc7xco8gyMeo",authDomain:"hay-day-model-3.firebaseapp.com",projectId:"hay-day-model-3",storageBucket:"hay-day-model-3.firebasestorage.app",messagingSenderId:"722715236032",appId:"1:722715236032:web:abd23592080fd60438bf25"}; // <-- paste your Firebase config here
 const SYNC=(()=>{let fs,au,role=null,tmr;const SHOP='main',on=()=>!!FB.apiKey&&typeof firebase!=='undefined',
 col=s=>fs.collection('shops').doc(SHOP).collection(s),cl=o=>JSON.parse(JSON.stringify(o)),ud=id=>col('users').doc(id),
 push=w=>{if(!on()||!role)return;for(const[s,a]of Object.entries(w))for(const o of a)col(s).doc(o.id).set(cl(o)).catch(console.warn)},
